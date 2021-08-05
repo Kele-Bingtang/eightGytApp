@@ -1,0 +1,68 @@
+@import '../../constants/imgUrl.less';
+@ADVIMG1:'homeMidImg1.png';
+@ADVIMG2:'homeMidImg2.png';
+
+.adv-box{
+  width: 100%;
+  height: 230px;
+  background-color: #f5f5f5;
+}
+.adv-item1{
+  margin-top: 16px;
+  margin-bottom: 16px;
+  margin-right: 8px;
+
+  position: relative;
+  background: url("@{IMAGEURL}@{ADVIMG1}") no-repeat;
+  background-size: cover;
+}
+.adv-item2{
+  margin-top: 16px;
+  margin-bottom: 16px;
+  margin-left: 8px;
+
+  position: relative;
+  background: url("@{IMAGEURL}@{ADVIMG2}") no-repeat;
+  background-size: auto 100%;
+  background-position: right;
+  background-color: #e7f0f9;
+}
+
+.adv-knowledge{
+  width: 60%;
+  position: absolute;
+  top: 20%;
+  left:20%;
+  text-align: center;
+}
+.adv-know{
+  display: block;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.2rem;
+  color: #64482F;
+}
+
+.adv-identity{
+  position: relative;
+
+}
+
+.adv-phy-ident{
+  position: absolute;
+  display: block;
+  top: 1.3rem;
+  left:0.6rem;
+  text-align: center;
+  color: #775637;
+}
+
+.adv-phy-ident-table{
+  position:absolute;
+  display: block;
+  top: 3rem;
+  left:1.5rem;
+  color: #555555;
+  font-style: normal;
+  font-size: 1rem;
+}

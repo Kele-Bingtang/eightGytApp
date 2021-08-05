@@ -1,11 +1,13 @@
 export default {
   pages: [
-    'pages/index/index'
-  ],
+    'pages/index/index',
+    'pages/hotSpot/index',
+    'pages/myRecord/index'
+    ],
   window: {
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',
-    navigationBarTitleText: 'WeChat',
+    navigationBarTitleText: '国医堂',
     navigationBarTextStyle: 'black'
   }
 }

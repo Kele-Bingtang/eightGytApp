@@ -1,0 +1,17 @@
+.content-icon{
+  padding: 45rpx 0;
+}
+.icon-item{
+  text-align: center;
+}
+.icon-img{
+  width: 96rpx;
+  height: 96rpx;
+}
+.icon-title{
+  margin-left: -5rpx;
+  margin-top: 6rpx;
+  font-size: 24rpx;
+  display: block;
+  color: #666;
+}
