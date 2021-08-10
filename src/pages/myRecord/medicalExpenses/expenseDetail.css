@@ -1,0 +1,71 @@
+.detail-margin {
+  margin-left: 3rem;
+  margin-top: 0.5rem;
+}
+.detail-title {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #666565;
+}
+.title-padding {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #666565;
+  padding-left: 1.7rem;
+}
+.detail-text {
+  font-size: 0.8rem;
+  color: #666565;
+}
+/*日期*/
+.detail-date {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: red;
+  float: right;
+  padding-right: 1rem;
+}
+/*分割线*/
+.detail-divider {
+  border-bottom: 0.05rem solid #b1afaf;
+  margin-top: 0.2rem;
+}
+/*费用详情*/
+.cost {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+/*每个费用详情*/
+.cost-item {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  height: auto;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  border-radius: 1.5rem;
+  background: white;
+}
+/*详情标题*/
+.cost-item-title {
+  width: 95%;
+  font-size: 1rem;
+  font-weight: bolder;
+  text-align: center;
+  border-radius: 1.5rem;
+  margin-top: 0.2rem;
+  background-color: white;
+}
+.cost-bg {
+  height: 50rem;
+  background-color: #F0F0F0;
+}
+.cost-bg-two {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #F0F0F0;
+}
+/*# sourceMappingURL=expanseDetial.css.map */

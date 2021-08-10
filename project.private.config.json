@@ -29,6 +29,36 @@
           "pathName": "pages/myRecord/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/myRecord/myData/myData",
+          "pathName": "pages/myRecord/myData/myData",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/myRecord/myRegistration/index",
+          "pathName": "pages/myRecord/myRegistration/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/myRecord/healthManage/index",
+          "pathName": "pages/myRecord/healthManage/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/myRecord/medicalRecord/index",
+          "pathName": "pages/myRecord/medicalRecord/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/myRecord/IdentifyRecord/identityItems",
+          "pathName": "pages/myRecord/IdentifyRecord/identityItems",
+          "query": "",
+          "scene": null
         }
       ]
     }

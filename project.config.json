@@ -4,7 +4,7 @@
   "description": "国医堂App",
   "appid": "wx28e7e15e2f843416",
   "setting": {
-    "urlCheck": true,
+    "urlCheck": false,
     "es6": false,
     "enhance": true,
     "postcss": false,

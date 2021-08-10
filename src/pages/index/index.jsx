@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { View } from '@tarojs/components'
 
 import { add, minus, asyncAdd } from '../../actions/counter'
+import {authorize} from '../../common/userLogin'
 
 import Header from './header'
 import HomeSwiper from './homeSwiper'
@@ -37,6 +38,20 @@ class Index extends Component {
   componentDidShow () { }
 
   componentDidHide () { }
+
+  //判断授权登录
+  checkUserInfoSession(){
+    Taro.checkSession({
+      success: function () {
+        //session_key 未过期，并且在本生命周期一直有效
+
+      },
+      fail: function () {
+        // session_key 已经失效，需要重新执行登录流程
+        authorize();
+      }
+    })
+  }
 
   render () {
     return (

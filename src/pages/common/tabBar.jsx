@@ -4,7 +4,7 @@ import { Form, View } from '@tarojs/components'
 import Taro from '@tarojs/taro'
 import {BASEURL} from '../../constants/global'
 
-class TabBar extends Component{
+export default class TabBar extends Component{
   constructor () {
     super(...arguments)
     this.state = {
@@ -35,26 +35,26 @@ class TabBar extends Component{
         break;
 
     }
-   
+
   }
 
   render(){
     return(
-      <AtTabBar
-      fixed
-      color="#ccc"
-      selectedColor= "#d40000"
-        tabList={[
-          {title: '首页', image: `${BASEURL}home.png`, selectedImage: `${BASEURL}homeSelected.png` },
-          {title: '今日热点', image: `${BASEURL}knowledge.png`, selectedImage: `${BASEURL}knowledgeSelected.png` },
-          {title: '健康档案', image: `${BASEURL}health.png`, selectedImage: `${BASEURL}healthSelected.png` },
-          {title: '我的', image: `${BASEURL}self.png`, selectedImage:`${BASEURL}selfSelected.png` }
-        ]}
-        onClick={this.handleClick.bind(this)}
-        current={this.props.currentTabBarIndex}
-        ></AtTabBar>
+    <View style={{'height':'4rem'}} >
+     <AtTabBar
+       fixed
+       color='#ccc'
+       selectedColor='#d40000'
+       tabList={[
+         {title: '首页', image: `${BASEURL}home.png`, selectedImage: `${BASEURL}homeSelected.png` },
+         {title: '今日热点', image: `${BASEURL}knowledge.png`, selectedImage: `${BASEURL}knowledgeSelected.png` },
+         {title: '健康档案', image: `${BASEURL}health.png`, selectedImage: `${BASEURL}healthSelected.png` },
+         {title: '我的', image: `${BASEURL}self.png`, selectedImage:`${BASEURL}selfSelected.png` }
+       ]}
+       onClick={this.handleClick.bind(this)}
+       current={this.props.currentTabBarIndex}
+     />
+   </View>
     )
   }
 }
-
-export default TabBar
