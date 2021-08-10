@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import Taro from '@tarojs/taro'
 import {View, Image, Text, Picker} from '@tarojs/components';
 import {AtInput, AtForm, AtButton, AtList, AtListItem, AtIcon} from 'taro-ui'
 
@@ -14,6 +15,7 @@ export default class Index extends Component{
   constructor(props) {
     super(props);
     this.state={
+      itemCode:'',
       username:'可乐',
       sexMan: true,
       sexWoman: false,
@@ -23,14 +25,16 @@ export default class Index extends Component{
       address:'广西省河池市',
       nation:'汉族',
       selector:['A型', 'B型', 'AB型', 'O型'],
-      xuexing:'AB型',
-      wenhua:'本科',
+      bloodType:'AB型',
+      culture:'本科',
       job:'后端',
       height:'185',
       weight:'62',
       BMI:'6.25'
     }
   }
+
+
 
 
   handleChange(){
@@ -79,7 +83,7 @@ export default class Index extends Component{
   // 血型
   onXuexingChangge(e){
     this.setState({
-      xuexing:this.state.selector[e.detail.value]
+      bloodType:this.state.selector[e.detail.value]
     })
   }
 
@@ -173,7 +177,7 @@ export default class Index extends Component{
             <View className="at-row at-col-6 picker-picker">
               <Picker  className='birth-data' mode='selector' range={this.state.selector} onChange={this.onXuexingChangge.bind(this)}>
                 <AtList>
-                  <AtListItem className='per-picker' extraText={this.state.xuexing} />
+                  <AtListItem className='per-picker' extraText={this.state.bloodType} />
                 </AtList>
               </Picker>
               <View className='at-col at-col-1 data-icon'>
@@ -184,11 +188,11 @@ export default class Index extends Component{
           <View className='input'>
             <AtInput
               className='input-info'
-              name='wenhua'
+              name='culture'
               title='文化程度'
               type='text'
               placeholder='请输入文化程度'
-              value={this.state.wenhua}
+              value={this.state.culture}
               onChange={this.handleChange.bind(this)}
             />
           </View>

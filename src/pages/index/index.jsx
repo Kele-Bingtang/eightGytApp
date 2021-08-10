@@ -1,9 +1,9 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
 import { View } from '@tarojs/components'
-
+import Taro from '@tarojs/taro'
 import { add, minus, asyncAdd } from '../../actions/counter'
-import {authorize} from '../../common/userLogin'
+import {authorize, getuser} from '../../common/userLogin'
 
 import Header from './header'
 import HomeSwiper from './homeSwiper'
@@ -33,18 +33,21 @@ class Index extends Component {
     console.log(this.props, nextProps)
   }
 
-  componentWillUnmount () { }
-
-  componentDidShow () { }
-
-  componentDidHide () { }
+  componentDidMount() {
+    this.checkUserInfoSession()
+  }
 
   //判断授权登录
   checkUserInfoSession(){
+
     Taro.checkSession({
       success: function () {
         //session_key 未过期，并且在本生命周期一直有效
-
+        new Promise((resolve,reject)=> {
+          getuser()
+          resolve()
+        }).then(()=>{
+        })
       },
       fail: function () {
         // session_key 已经失效，需要重新执行登录流程
@@ -56,12 +59,12 @@ class Index extends Component {
   render () {
     return (
       <View className='index'>
-        <Header/>
-        <HomeSwiper/>
-        <IndexIcon/>
-        <HomeAdv/>
-        <HomeHotList/>
-        <TabBar currentTabBarIndex={0}/>
+        <Header />
+        <HomeSwiper />
+        <IndexIcon />
+        <HomeAdv />
+        <HomeHotList />
+        <TabBar currentTabBarIndex={0} />
       </View>
     )
   }

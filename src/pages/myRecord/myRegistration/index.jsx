@@ -1,8 +1,10 @@
 import React,{Component} from 'react'
+import Taro from '@tarojs/taro'
 import { View} from '@tarojs/components'
 import Registration from "./registration"
 import TabBar from "../../common/tabBar";
 import './index.less'
+import {APIBASEURL} from "../../../constants/global";
 
 /**
  * 我的
@@ -18,7 +20,42 @@ export default class Index extends Component{
   }
 
   //获取挂号信息
-
+  componentDidMount() {
+    Taro.getStorage({
+      key:'itemCode',
+      success:(res)=>{
+        const itemCode = res.data;
+        Taro.request({
+          url: `${APIBASEURL}/myRegisters/${itemCode}`,
+          header: {
+            'content-type': 'application/json' // 默认值
+          },
+          method: 'GET',
+          dataType: 'json',
+          credentials: 'include',
+          success: (res) => {
+            this.setState({
+              registrations: res.data.data
+            })
+            if (this.state.registrations && this.state.registrations.length==0){
+              Taro.showToast({
+                title: '您没有挂号记录！',
+                icon: 'none',
+                duration: 3000
+              })
+            }
+          },
+          fail: function (errMsg) {
+            Taro.showToast({
+              title: '服务器请求失败!',
+              icon: 'none',
+              duration: 3000
+            })
+          }
+        });
+      }
+    })
+  }
 
 
   render(){

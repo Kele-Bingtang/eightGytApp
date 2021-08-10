@@ -37,7 +37,7 @@ export default class Registration extends Component{
   render(){
     let registration = this.props.registration;
     let className = this.props.className;
-    let count=null;
+    let count;
     if(registration.status == '1'){
       count=<View className={className.numberClass}>
               <View>

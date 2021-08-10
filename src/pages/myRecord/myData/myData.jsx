@@ -55,13 +55,12 @@ export default class PersonData extends Component {
     Taro.getStorage({
       key: 'openid',
       success: (res)=> {
-        console.log(`1.用户的 openid: %s`,res.data);
-
+        console.log(res.data.openid);
         // 根据用户的 openid 查询用户信息
         Taro.request({
           url: `${APIBASEURL}/getUserDetail`,
           data:{
-            openid: res.data
+            openid: res.data.openid
           },
           header: {
             'content-type': 'application/json'
@@ -70,7 +69,6 @@ export default class PersonData extends Component {
           dataType: 'json',
           credentials: 'include',
           success: (res) => {
-            console.log(`2. getUserDetail() ==> `,res);
             // 用户信息未补全
             if (res.data.code == 502){
               Taro.showModal({
@@ -346,6 +344,7 @@ export default class PersonData extends Component {
               dataType: 'json',
               credentials: 'include',
               success: (res) => {
+                console.log(res)
                 if(res.data === '注册成功'){
                   Taro.showToast({
                     title: '用户信息补全成功！',

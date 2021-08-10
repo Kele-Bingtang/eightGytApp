@@ -5,62 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a13d107b-81d1-427b-b625-d0ffc2297c24" name="Default Changelist" comment="1.做好了首页，今日热点，我的界面">
-      <change afterPath="$PROJECT_DIR$/src/common/WxValidate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/userLogin.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/common/utils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/IdentifyRecord/identityItems.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/IdentifyRecord/identityItems.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/IdentifyRecord/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/IdentifyRecord/index.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/IdentifyRecord/recordDetail.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/IdentifyRecord/recordDetail.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/effect/effectEvaluate.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/effect/effectEvaluate.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/effect/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/effect/index.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/eleMedRec/detail.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/eleMedRec/detail.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/healthManage/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/healthManage/index.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/medicalExpenses/detail.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/medicalExpenses/expenseDetail.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/medicalExpenses/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/medicalExpenses/index.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/medicalRecord/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/medicalRecord/index.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/myCollection/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/myCollection/index.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/myCollection/myCollection.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/myCollection/myCollection.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/myData/myData.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/myData/myData.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/myPatient/PatientManagerList.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/myPatient/PatientManagerList.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/myPatient/PatientManagerListItem.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/myPatient/PatientManagerListItem.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/myPatient/addPatient.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/myPatient/addPatient.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/myPatient/index.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/myPatient/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/myPatient/index.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/myRegistration/index.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/myRegistration/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/myRegistration/index.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/myRegistration/registration.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/myRegistration/registration.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/wxLogin.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/wxLogin.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/recordExpense.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/myRecord/recordExpense.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/project.config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project.private.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/project.private.config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/userLogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/userLogin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/constants/global.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/global.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/common/tabBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/common/tabBar.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/index/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index/indexIcon.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index/indexIcon.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/myRecord/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/myRecord/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/myRecord/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/myRecord/index.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/myRecord/healthManage/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/myRecord/healthManage/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/myRecord/myData/myData.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/myRecord/myData/myData.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/myRecord/myPatient/PatientManagerList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/myRecord/myPatient/PatientManagerList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/myRecord/myRegistration/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/myRecord/myRegistration/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/myRecord/myRegistration/registration.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/myRecord/myRegistration/registration.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/myRecord/wxLogin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/myRecord/wxLogin.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,19 +75,9 @@
       <recent name="F:\Programming area\Ideal\IntelliJ IDEA 2020.3\IdealWebProjects\gytApp\src\pages\myRecord\myPatient" />
       <recent name="F:\Programming area\Ideal\IntelliJ IDEA 2020.3\IdealWebProjects\gytApp\src\pages\myRecord" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Programming area\Ideal\IntelliJ IDEA 2020.3\IdealWebProjects\gytApp\src\pages\myRecord" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -149,6 +95,8 @@
       <workItem from="1628393380335" duration="10752000" />
       <workItem from="1628473057349" duration="3421000" />
       <workItem from="1628561247813" duration="8744000" />
+      <workItem from="1628581152524" duration="8619000" />
+      <workItem from="1628589804033" duration="55000" />
     </task>
     <task id="LOCAL-00001" summary="1.做好了首页，今日热点，我的界面">
       <created>1628160115299</created>
@@ -178,7 +126,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="1.做好了首页，今日热点，我的界面" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.做好了首页，今日热点，我的界面" />
+    <MESSAGE value="1.动态获取数据&#10;2.实现code登录" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.动态获取数据&#10;2.实现code登录" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
