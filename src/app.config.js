@@ -2,6 +2,7 @@ export default {
   pages: [
     'pages/index/index',
     'pages/hotSpot/index',
+    'pages/healthManage/index',
     'pages/myRecord/index',
     'pages/myRecord/wxLogin',
     'pages/myRecord/myData/myData',

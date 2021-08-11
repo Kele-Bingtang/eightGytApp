@@ -25,7 +25,7 @@ export default class TabBar extends Component{
         break;
       case 2:
         Taro.reLaunch({
-          url:''
+          url:'/pages/healthManage/index'
         });
        break;
       case 3:

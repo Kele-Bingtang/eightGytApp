@@ -22,7 +22,6 @@ export const authorize =()=>{
       }else{
           Taro.getUserInfo({
             success:function(res){
-
               let userInfo = res.userInfo
               if(userInfo != null){
                   Taro.setStorage({
