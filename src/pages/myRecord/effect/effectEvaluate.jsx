@@ -1,8 +1,10 @@
 import {Component} from "react";
 import {Text, View} from "@tarojs/components";
-
-import './effectEvaluate.less'
 import {AtButton, AtCheckbox, AtInput, AtRate} from "taro-ui";
+import Taro from '@tarojs/taro'
+import moment from "moment";
+import {APIBASEURL} from '../../../constants/global'
+import './effectEvaluate.less'
 import TabBar from "../../common/tabBar";
 
 /**
@@ -15,6 +17,8 @@ export default class EffectEvaluate extends Component{
     super(props);
     this.state={
       checkedList: ['list1'],
+      userCode:'',
+      date: '',//就诊时间
       flag: false,
       // 疾病列表
       diseaseLists: [
@@ -43,6 +47,13 @@ export default class EffectEvaluate extends Component{
       stars2: 0,
       stars3: 0,
       stars4: 0,
+      //获取疾病列表
+      disList: [],
+      // 匿名评价
+      choose: 0,
+      // 其他疾病输入框
+      disOther: '',
+      disease: [],//疾病
     }
     this.checkboxOption = [{
       value:'list1',
@@ -50,6 +61,81 @@ export default class EffectEvaluate extends Component{
     }]
   }
 
+  componentDidMount() {
+    Taro.getStorage({
+      key: 'itemCode',
+      success:(res)=>{
+        this.setState({
+          userCode: res.data
+        })
+        Taro.request({
+          url: `${APIBASEURL}/detailEvaluate`,
+          data: {
+            itemcode: res.data
+          },
+          header: {
+            'content-type': 'application/json'
+          },
+          method: 'GET',
+          success: (res) => {
+            this.setState({
+              date: res.data.data.registerDate,
+              choose: res.data.data.anonymous,
+              stars1: res.data.data.serviceSource,
+              stars2: res.data.data.environmentSource,
+              stars3: res.data.data.effectSource,
+              stars4: res.data.data.overallSource,
+            });
+            //flag为true为已评价，不显示确定
+            if(res.data.data.source !== null&&res.data.data.source !== ''){
+              this.setState({
+                flag: true
+              })
+            }
+            /*将疾病的按钮状态匹配为true*/
+            if (res.data.data.diseaseLists.length) {
+              this.setState({
+                disList: res.data.data.diseaseLists
+              })
+              let disListOld = this.state.disList
+              let diseaseListOld = this.state.diseaseLists;
+              for (let i = 0; i < disListOld.length; i++) {
+                for (let k = 0; k < diseaseListOld.length - 1; k++) {
+                  if (disListOld[i] === diseaseListOld[k].title) {
+                    diseaseListOld[k].selected = true
+                    break;
+                  }
+                  /*将其他疾病text数据写回*/
+                  if (JSON.stringify(diseaseListOld).indexOf(`"title":"${disListOld[disListOld.length - 1]}"`) === -1) {
+                    diseaseListOld[4].value = disListOld[disListOld.length - 1]
+                    diseaseListOld[4].selected = true
+                    this.setState({
+                      disOther: disListOld[disListOld.length - 1]
+                    })
+                  }
+                }
+              }
+              /*将疾病列表进行回传显示*/
+              this.setState({
+                diseaseLists: diseaseListOld
+              })
+            }
+          },
+          fail: function (errMsg) {
+            Taro.showToast({
+              title: '服务器请求错误',
+              icon: 'none',
+              duration: 3000
+            })
+          }
+        });
+
+      }
+
+    })
+
+
+  }
 
   handleChange (value) {
     this.setState({
@@ -58,27 +144,30 @@ export default class EffectEvaluate extends Component{
   }
 
   handleChangeStar (index,value) {
-    if(index == 1){
-      this.setState({
-        stars1: value
-      })
-    }
-    if(index == 2){
-      this.setState({
-        stars2: value
-      })
-    }
-    if(index == 3){
-      this.setState({
-        stars3: value
-      })
-    }
-    if(index == 4){
-      this.setState({
-        stars4: value
-      })
+    if(!this.state.flag) {
+      if (index == 1) {
+        this.setState({
+          stars1: value
+        })
+      }
+      if (index == 2) {
+        this.setState({
+          stars2: value
+        })
+      }
+      if (index == 3) {
+        this.setState({
+          stars3: value
+        })
+      }
+      if (index == 4) {
+        this.setState({
+          stars4: value
+        })
+      }
     }
   }
+
 
   onChooseDisease(index){
     if(!this.state.flag){
@@ -90,9 +179,58 @@ export default class EffectEvaluate extends Component{
     }
   }
 
-  onChooseDiseaseOther(){
+  onChooseDiseaseOther(value){
+    let diseaseHistory = [...this.state.diseaseLists];
+    this.setState({
+      disOther: value
+    })
+    diseaseHistory[4].selected = true;
+    diseaseHistory[4].value = this.state.disOther;
 
+    this.setState({
+      diseaseLists: diseaseHistory
+    })
   }
+
+  /*提交*/
+  onSubmit() {
+    for (let i = 0; i < this.state.diseaseLists.length; i++) {
+      if (this.state.diseaseLists[i].selected === true) {
+        this.state.disease.push(this.state.diseaseLists[i].value)
+      }
+    }
+    Taro.request({
+      url: `${APIBASEURL}/updateEvaluate`,
+      data: {
+        itemcode: this.state.code,
+        illness: this.state.disease.join(","),
+        anonymous: this.state.choose,
+        serviceSource: this.state.stars1,
+        environmentSource: this.state.stars2,
+        effectSource: this.state.stars3,
+        overallSource: this.state.stars4,
+      },
+      header: {'content-type': 'application/json'},
+      method: 'POST',
+      success: (res) => {
+        Taro.showToast({
+          title: '保存成功！',
+          icon: 'none',
+          duration: 3000
+        });
+        Taro.redirectTo({url: 'index'})
+
+      },
+      fail: function (errMsg) {
+        Taro.showToast({
+          title: '保存失败！',
+          icon: 'none',
+          duration: 3000
+        })
+      }
+    })
+  }
+
 
   render() {
     let disItem = this.state.diseaseLists
@@ -113,7 +251,7 @@ export default class EffectEvaluate extends Component{
         {/*选择疾病*/}
         <View className='effectEvaluate-disease'>
           <View className='effectEvaluate-disease-date'>
-            <Text>2021-8-8</Text>
+            <Text>{moment(this.state.date).format('YYYY' + '年' + 'MM' + '月' + 'DD' + '日')}</Text>
           </View>
           <View className='at-row at-row--wrap'>
             <Text className='at-row effectEvaluate-disease-title'>所患疾病</Text>
@@ -184,6 +322,9 @@ export default class EffectEvaluate extends Component{
           />
         </View>
       </View>
+        <View className='evaluate-msg-button'>
+          <AtButton type='submit' circle size='normal' className={this.state.flag?'eval-but':'eval-but-show'} onClick={this.onSubmit.bind(this)}>确定</AtButton>
+        </View>
         <TabBar currentTabBarIndex={3} />
       </View>
     )

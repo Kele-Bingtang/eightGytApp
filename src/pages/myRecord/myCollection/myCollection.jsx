@@ -21,28 +21,28 @@ export default class MyCollection extends Component{
   }
 
   render() {
-    let hotItem=''
+    let myHotSpot = this.props.myHotSpot;
     return(
       <View >
         <View className='at-row at-col-12 home-hot-content'>
-          <View className='at-row at-col-12 home-hot-item' onClick={this.toHotHospitalDetail.bind(this, hotItem.itemcode)}>
+          <View className='at-row at-col-12 home-hot-item' onClick={this.toHotHospitalDetail.bind(this, myHotSpot.itemcode)}>
             <View className='at-col at-col-4'>
               <Image
                 className='at-article__img hot-item-img'
-                src={hotItem.filePath}
-                mode='aspectFill' />
+                src={myHotSpot.filePath}
+                mode='aspectFill'
+              />
             </View>
             <View className='at-col at-col-8 hot-item-text'>
               <View className='home-hot-text'>
                 <View className='home-hot-text-title-name'>
-                  <text className='home-hot-text-title'>{hotItem.hotspotTitle}人参的功效与作用</text>
+                  <text className='home-hot-text-title'>{myHotSpot.hotspotTitle}</text>
                 </View>
                 <View className=''>
-                  <text className='home-hot-date'>{hotItem.itemcreateatString}2021-8-7</text>
+                  <text className='home-hot-date'>{myHotSpot.itemcreateatString}</text>
                 </View>
               </View>
-              <Text  className='at-col--wrap home-hot-intro'>人参中药学中属于补气药，其药性甘、微
-                苦、微温，主入脾，肺，心...</Text>
+              <Text  className='at-col--wrap home-hot-intro'>{myHotSpot.hotspotContent}</Text>
             </View>
           </View>
         </View>

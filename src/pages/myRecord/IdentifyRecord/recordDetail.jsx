@@ -1,6 +1,8 @@
 import {Component} from "react";
 import {Text, View} from "@tarojs/components";
+import Taro from '@tarojs/taro'
 import { AtAccordion, AtList } from 'taro-ui'
+import {APIBASEURL} from '../../../constants/global'
 import './recordDetail.less'
 import TabBar from "../../common/tabBar";
 
@@ -9,13 +11,13 @@ export default class RecordDetail extends Component{
   constructor(props) {
     super(props);
     this.state={
-      identityItems:[
-        {
-          identityDate:'2016-10-01',
-          identityContent:'平和质',
-          identityTendency:'阴虚质',
-          identityText:'面色、肤色润泽，头发较密，目光有神，不易疲劳，精力充沛，耐受寒热，睡眠良好，胃纳佳，二便正常，舌色淡红、苔薄白，脉和缓有力'
-        }],
+      identityContent:'',
+      identityTendency:'',
+      lbCjbxText:'',//常见表现
+      tlQztjText:'',//情志调适
+      tlTyfsYsText:'',//饮食调养
+      tlTyfsQjText:'',//起居调适
+      tlTyfsYdText:'',//运动保健
       open1:false,
       open2:false,
       open3:false,
@@ -25,7 +27,110 @@ export default class RecordDetail extends Component{
   }
 
   componentDidMount() {
+    Taro.getStorage({
+      key: 'itemCode',
+      success:(res)=>{
+        Taro.request({
+          url: `${APIBASEURL}/selectUserTzResultDTO`,
+          data:{
+            resultItemcode:res.data
+          },
+          header: {
+            'content-type': 'application/json'
+          },
+          method: 'GET',
+          dataType: 'json',
+          credentials: 'include',
+          success: (res) => {
+            let tzDetermine = res.data.data.tzDetermine;
+            let tzTendency = res.data.data.tzTendency;
+            //显示结果到底是什么体质
+            let tzTypes = ['平和质','特禀质','气郁质','血瘀质','湿热质','痰湿质','阴虚质','阳虚质','气虚质'];
+            let determineTypes = '';
+            let tendencyTypes = '';
+            if(tzDetermine !== ''){
+              let tzDetermineTypes = tzDetermine.split(',');
+              tzDetermineTypes.forEach(function (item) {
+                let i = parseInt(item);
+                determineTypes = determineTypes + tzTypes[i-1] +' ';
+              })
+            }
+            if (tzTendency !== ''){
+              let tzTendencyTypes = tzTendency.split(',');
+              tzTendencyTypes.forEach(function (item) {
+                let i = parseInt(item);
+                tendencyTypes = tendencyTypes + tzTypes[i-1] +' ';
+              })
+            }
+            this.setState({
+              identityContent:determineTypes,//是
+              identityTendency:tendencyTypes//倾向是
+            });
 
+            //根据最终体质显示指导意见
+            let types = '';
+            if (typeof(tzDetermine) !== 'undefined' && tzDetermine !==''){
+              types = tzDetermine;
+              if (typeof(tzTendency) !== 'undefined' && tzTendency !==''){
+                types = types +','+tzTendency;
+              }
+            }else if (typeof(tzTendency) !== 'undefined' && tzTendency !==''){
+              types = tzTendency;
+            }
+            if(types !== ''){
+              Taro.request({
+                url: `${APIBASEURL}/selectKnowledgeTcmTypes?types=${types}`,
+                header: {
+                  'content-type': 'application/json'
+                },
+                method: 'GET',
+                dataType: 'json',
+                credentials: 'include',
+                success: (res) => {
+                  let lbCjbxText= '';//常见表现
+                  let tlQztjText = '';//情志调适
+                  let tlTyfsYsText = '';//饮食调养
+                  let tlTyfsQjText ='';//起居调适
+                  let tlTyfsYdText = '';//运动保健
+                  let tlTyfsXwbjTest='';//空位保健
+                  res.data.data.forEach(function (item) {
+                    lbCjbxText = lbCjbxText+ item.lbCjbx +'。 ';
+                    tlQztjText = tlQztjText+ item.tlQztj +'\n';
+                    tlTyfsYsText = tlTyfsYsText+ item.tlTyfsYs +'\n';
+                    tlTyfsQjText = tlTyfsQjText+ item.tlTyfsQj +'\n';
+                    tlTyfsYdText = tlTyfsYdText+ item.tlTyfsYd +'\n';
+                    tlTyfsXwbjTest = tlTyfsXwbjTest+ item.tlTyfsXwbj +'\n';
+                  });
+                  this.setState({
+                    lbCjbxText:lbCjbxText,
+                    tlQztjText:tlQztjText,
+                    tlTyfsYsText:tlTyfsYsText,
+                    tlTyfsQjText:tlTyfsQjText,
+                    tlTyfsYdText:tlTyfsYdText,
+                    tlTyfsXwbjTest:tlTyfsXwbjTest
+                  })
+                },
+                fail: function (errMsg) {
+                  Taro.showToast({
+                    title: '服务器请求错误',
+                    icon: 'none',
+                    duration: 3000
+                  })
+                }
+              });
+            }
+
+          },
+          fail: function (errMsg) {
+            Taro.showToast({
+              title: '服务器请求错误',
+              icon: 'none',
+              duration: 3000
+            })
+          }
+        });
+      }
+    })
   }
 
   toSeeRecord(){
@@ -70,17 +175,17 @@ export default class RecordDetail extends Component{
               <Text className='recordDetail-body'>你的体质为：</Text>
             </View>
             <View className='recordDetail-item'>
-              <Text className='recordDetail-text'>是：
+              {this.state.identityContent !== ''? ( <Text className='recordDetail-text'>是：
                 <Text className='recordDetail-text-content'>{this.state.identityItems[0].identityContent}</Text>
-              </Text>
+              </Text>):''}
             </View>
             <View>
-             <Text className='recordDetail-text'>倾向是：
-              <Text className='recordDetail-text-content'>{this.state.identityItems[0].identityTendency}</Text>
-             </Text>
+              {this.state.identityTendency !== ''? (<Text className='recordDetail-text'>倾向是：
+                <Text className='recordDetail-text-content'>{this.state.identityItems[0].identityTendency}</Text>
+              </Text>):''}
             </View>
             <View>
-              <Text className='recordDetail-text'>主要表现：{this.state.identityItems[0].identityText}</Text>
+              <Text className='recordDetail-text'>主要表现：{this.state.lbCjbxText}</Text>
             </View>
           </View>
           <View className='recordDetail-head2'>
@@ -95,7 +200,7 @@ export default class RecordDetail extends Component{
             isAnimation={false}
           >
             <AtList hasBorder={false} className='content-list'>
-             可乐
+              {this.state.tlQztjText}
             </AtList>
           </AtAccordion>
           <AtAccordion
@@ -107,7 +212,7 @@ export default class RecordDetail extends Component{
             isAnimation={false}
           >
             <AtList hasBorder={false} className='content-list'>
-              可乐
+              {this.state.tlTyfsYsText}
             </AtList>
           </AtAccordion>
           <AtAccordion
@@ -119,7 +224,7 @@ export default class RecordDetail extends Component{
             isAnimation={false}
           >
             <AtList hasBorder={false} className='content-list'>
-              可乐
+              {this.state.tlTyfsQjText}
             </AtList>
           </AtAccordion>
           <AtAccordion
@@ -131,7 +236,7 @@ export default class RecordDetail extends Component{
             isAnimation={false}
           >
             <AtList hasBorder={false} className='content-list'>
-              可乐
+              {this.state.tlTyfsYdText}
             </AtList>
           </AtAccordion>
           <AtAccordion
@@ -143,7 +248,7 @@ export default class RecordDetail extends Component{
             isAnimation={false}
           >
             <AtList hasBorder={false} className='content-list'>
-              可乐
+              {this.state.tlTyfsXwbjTest}
             </AtList>
           </AtAccordion>
         </View>

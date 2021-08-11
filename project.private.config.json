@@ -55,8 +55,8 @@
           "scene": null
         },
         {
-          "name": "pages/myRecord/IdentifyRecord/identityItems",
-          "pathName": "pages/myRecord/IdentifyRecord/identityItems",
+          "name": "pages/myRecord/effect/effectEvaluate",
+          "pathName": "pages/myRecord/effect/effectEvaluate",
           "query": "",
           "scene": null
         }

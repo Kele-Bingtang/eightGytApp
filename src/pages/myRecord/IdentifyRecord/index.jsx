@@ -1,10 +1,13 @@
 import {Component} from "react";
 import {Text, View} from "@tarojs/components";
 
+import Taro from "@tarojs/taro";
+
+import IdentityItems from './identityItems'
+import {APIBASEURL} from "../../../constants/global"
 import './index.less'
 import './identityItems.less'
 import TabBar from "../../common/tabBar";
-import Taro from "@tarojs/taro";
 /**
  * 我的
  * 体质辨识记录
@@ -23,14 +26,43 @@ export default class Index extends Component{
           identityContent:'平和质',
           identityTendency:'阴虚质'
         }],
+      identityItem:'',
     }
   }
 
 
+  componentDidMount () {
 
+    Taro.getStorage({
+      key: 'itemCode',
+      success:(res)=> {
+        const usercode = res.data;
+        Taro.request({
+          url: `${APIBASEURL}/selectUserTzResultByUsercode?usercode=${usercode}`,
+          header: {
+            'content-type': 'application/json' // 默认值
+          },
+          method: 'GET',
+          dataType: 'json',
+          credentials: 'include',
+          success: (res) => {
+            this.setState({
+              identityItem: res.data.data
+            })
+          },
+          fail: function (errMsg) {
+            Taro.showToast({
+              title: '服务器请求错误',
+              icon: 'none',
+              duration: 3000
+            })
+          }
+        });
+      }
+    })
+  }
 
   render() {
-
 
     return(
       <View className='index'>
@@ -54,30 +86,7 @@ export default class Index extends Component{
             }else {
               className='Two RecordItem';
             }
-              //return <IdentityItems identityItem={identityItem} className={className} key={index} index={index} />
-            return(
-              <View className='identityItem'>
-                <View className={className}>
-                  <View className='recordItem-time'>
-                    <Text>{identityItem.identityDate}</Text>
-                  </View>
-                  <View className='recordItem-body'>
-                    <Text className='recordDetail-text'>是{identityItem.identityContent},</Text>
-                    <Text className='recordDetail-text'>   倾向是{identityItem.identityTendency}</Text>
-                  </View>
-                  <View className='recordItem-operation' onClick={function toRecordDetailPage(){
-                    Taro.navigateTo({
-                    url: './recordDetail'
-                  })
-                  }}
-                  >
-                    <Text>查看</Text>
-                  </View>
-                </View>
-                <View>
-                </View>
-              </View>
-            )
+              return <IdentityItems identityItem={identityItem} className={className} key={index} index={index} />
           })
         }
         <TabBar currentTabBarIndex={3} />

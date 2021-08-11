@@ -11,10 +11,10 @@ class HotSpotIndex extends Component{
   constructor(props){
     super(props);
     this.state = {
-     
+
     }
   }
-  
+
   onChange (value) {
     this.setState({
       value: value
@@ -31,14 +31,14 @@ class HotSpotIndex extends Component{
     return(
       <View className='index'>
         <AtSearchBar
-             actionName='搜索'
-             placeholder='搜索今日热点'
-             maxLength='50'
-             onChange={this.onChange.bind(this)}
-             onActionClick={this.onActionClick.bind(this)}
-             className='search-input'
+          actionName='搜索'
+          placeholder='搜索今日热点'
+          maxLength='50'
+          onChange={this.onChange.bind(this)}
+          onActionClick={this.onActionClick.bind(this)}
+          className='search-input'
         />
-        <HotSpotIcon/>
+        <HotSpotIcon />
         <TabBar currentTabBarIndex={1} />
       </View>
     )

@@ -4,15 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a13d107b-81d1-427b-b625-d0ffc2297c24" name="Default Changelist" comment="1.做好了首页，今日热点，我的界面">
-      <change afterPath="$PROJECT_DIR$/src/pages/healthManage/healthRecord.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/healthManage/healthRecord.jsx" afterDir="false" />
+    <list default="true" id="a13d107b-81d1-427b-b625-d0ffc2297c24" name="Default Changelist" comment="1.健康档案Tabbar实现">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/userLogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/userLogin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/myRecord/healthManage/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/myRecord/healthManage/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/myRecord/medicalExpenses/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/myRecord/medicalExpenses/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/myRecord/medicalRecord/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/myRecord/medicalRecord/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/myRecord/recordExpense.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/myRecord/recordExpense.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.private.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/project.private.config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/hotSpot/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/hotSpot/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/myRecord/IdentifyRecord/identityItems.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/myRecord/IdentifyRecord/identityItems.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/myRecord/IdentifyRecord/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/myRecord/IdentifyRecord/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/myRecord/IdentifyRecord/recordDetail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/myRecord/IdentifyRecord/recordDetail.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/myRecord/effect/effectEvaluate.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/myRecord/effect/effectEvaluate.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/myRecord/effect/effectEvaluate.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/myRecord/effect/effectEvaluate.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/myRecord/effect/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/myRecord/effect/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/myRecord/myCollection/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/myRecord/myCollection/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/myRecord/myCollection/myCollection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/myRecord/myCollection/myCollection.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,19 +79,6 @@
       <recent name="F:\Programming area\Ideal\IntelliJ IDEA 2020.3\IdealWebProjects\gytApp\src\pages\myRecord" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -108,7 +98,8 @@
       <workItem from="1628581152524" duration="8619000" />
       <workItem from="1628589804033" duration="55000" />
       <workItem from="1628590132917" duration="4463000" />
-      <workItem from="1628646079578" duration="4296000" />
+      <workItem from="1628646079578" duration="6566000" />
+      <workItem from="1628670526197" duration="4351000" />
     </task>
     <task id="LOCAL-00001" summary="1.做好了首页，今日热点，我的界面">
       <created>1628160115299</created>
@@ -124,7 +115,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628590348257</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="1.健康档案Tabbar实现">
+      <created>1628651360331</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1628651360331</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,7 +145,8 @@
     <MESSAGE value="1.做好了首页，今日热点，我的界面" />
     <MESSAGE value="1.动态获取数据&#10;2.实现code登录" />
     <MESSAGE value="1.添加登录code" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.添加登录code" />
+    <MESSAGE value="1.健康档案Tabbar实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.健康档案Tabbar实现" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
