@@ -29,6 +29,12 @@
           "pathName": "pages/myRecord/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/index/knowledge/healthKnowledge",
+          "pathName": "pages/index/knowledge/healthKnowledge",
+          "query": "",
+          "scene": null
         }
       ]
     }

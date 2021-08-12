@@ -1,72 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a13d107b-81d1-427b-b625-d0ffc2297c24" name="Default Changelist" comment="">
+    <list default="true" id="b2aa8017-b43e-40a9-a0e9-af3a6a6dd213" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/pages/index/images/a.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/index/images/b.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/index/knowledge/healthKnowledge.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/project.config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.private.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/project.private.config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/global.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/global.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index/homeAdv.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index/homeAdv.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/myRecord/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/myRecord/index.jsx" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Less File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="userSettingsFile" value="F:\Programming area\Maven\apache-maven-3.6.1\conf\settings.xml" />
+        <option name="localRepository" value="C:\Users\wcy\.m2\repository" />
+        <option name="mavenHome" value="D:/APP/apache-maven-3.6.1" />
+        <option name="userSettingsFile" value="D:\APP\apache-maven-3.6.1\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="downloadDocsAutomatically" value="true" />
-        <option name="downloadSourcesAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
   </component>
-  <component name="MavenRunner">
-    <option name="jreName" value="1.8" />
-  </component>
-  <component name="ProjectId" id="1wFPoTzQ2FJGGoaNbEgT3w9h2mI" />
-  <component name="ProjectViewState">
-    <option name="showLibraryContents" value="true" />
-  </component>
+  <component name="ProjectId" id="1wW58IQv8gyztqadbPLnhvCPrHQ" />
   <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="Less" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.path.for.package.stylelint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.stylelint" value="F:\Programming area\Ideal\IntelliJ IDEA 2020.3\IdealWebProjects\gytApp\node_modules\stylelint" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="node.js.selected.package.stylelint" value="$PROJECT_DIR$/node_modules/stylelint" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.runner" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2019.2.4\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\wcy\Desktop\project2\gyt\eightGytApp\src\pages\index\images" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a13d107b-81d1-427b-b625-d0ffc2297c24" name="Default Changelist" comment="" />
-      <created>1628051537660</created>
+      <changelist id="b2aa8017-b43e-40a9-a0e9-af3a6a6dd213" name="Default Changelist" comment="" />
+      <created>1628561343351</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1628051537660</updated>
-      <workItem from="1628051538850" duration="1189000" />
+      <updated>1628561343351</updated>
+      <workItem from="1628561346535" duration="1028000" />
+      <workItem from="1628563149570" duration="914000" />
+      <workItem from="1628567215301" duration="13771000" />
+      <workItem from="1628645595435" duration="8117000" />
+      <workItem from="1628654057220" duration="3592000" />
+      <workItem from="1628667866595" duration="10615000" />
+      <workItem from="1628731783356" duration="1224000" />
+      <workItem from="1628753834146" duration="243000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

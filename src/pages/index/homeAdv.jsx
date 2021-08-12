@@ -1,13 +1,21 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import Taro from '@tarojs/taro';
 import {View, Text} from '@tarojs/components'
 
+
 import './homeAdv.less'
+
 class HomeAdv extends Component{
+
+  //转到健康管理规范
+  toHealthKnowledge(){
+    Taro.navigateTo({url: '/pages/index/knowledge/healthKnowledge'})
+  }
 
   render(){
     return (
       <View className="at-row adv-box">
-        <View className="at-col-6 adv-item1">
+        <View className="at-col-6 adv-item1" onClick={this.toHealthKnowledge.bind(this)}>
         <View className='adv-knowledge'>
             <Text className='adv-know'>中医健康管理知识宣教</Text>
           </View>

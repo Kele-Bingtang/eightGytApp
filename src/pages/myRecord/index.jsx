@@ -5,6 +5,7 @@ import { AtAvatar } from 'taro-ui'
 
 import TabBar from '../common/tabBar'
 import "./index.less"
+
 export default class MyRecordIndex extends Component{
 
 

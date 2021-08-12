@@ -2,7 +2,8 @@ export default {
   pages: [
     'pages/index/index',
     'pages/hotSpot/index',
-    'pages/myRecord/index'
+    'pages/myRecord/index',
+    'pages/index/knowledge/healthKnowledge',
     ],
   window: {
     backgroundTextStyle: 'light',
